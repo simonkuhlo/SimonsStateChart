@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cethgc0r7hbd8"]
+[gd_scene load_steps=7 format=3 uid="uid://cethgc0r7hbd8"]
 
-[ext_resource type="Script" path="res://state_chart.gd" id="1_bjq4o"]
-[ext_resource type="Script" path="res://StateChartState/parallel_state.gd" id="2_3dvw8"]
-[ext_resource type="Script" path="res://StateChartState/atomic_state.gd" id="3_0cuih"]
-[ext_resource type="Script" path="res://StateChartState/compound_state.gd" id="3_lqogw"]
-[ext_resource type="Script" path="res://StateTransition/state_transition.gd" id="5_u100q"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/state_chart.gd" id="1_bjq4o"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/parallel_state.gd" id="2_3dvw8"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/atomic_state.gd" id="3_0cuih"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/compound_state.gd" id="3_lqogw"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/state_transition.gd" id="5_u100q"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/cooldown_guard.gd" id="6_704rj"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,6 +25,10 @@ script = ExtResource("3_0cuih")
 [node name="ToAtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
 to = NodePath("../../AtomicState2")
+
+[node name="CooldownGuard" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState/ToAtomicState2"]
+script = ExtResource("6_704rj")
+cooldown_seconds = 2.0
 
 [node name="AtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState"]
 script = ExtResource("3_0cuih")
