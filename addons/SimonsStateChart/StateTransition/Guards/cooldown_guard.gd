@@ -23,7 +23,6 @@ func _on_transition_taken():
 	timer.start()
 
 func is_statisfied() -> bool:
-	print("Time left: " + str(timer.time_left))
 	if timer.is_stopped():
 		return true
 	return false
