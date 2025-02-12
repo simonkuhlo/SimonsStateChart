@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7ecds4ls4bhc"]
 
-[ext_resource type="Script" path="res://_Lib/StateChartLib/Tools/StateDebugger/state_chart_debugger.gd" id="1_7i0xt"]
-[ext_resource type="Script" path="res://_Lib/StateChartLib/Tools/StateDebugger/dynamic_tree.gd" id="2_uggtb"]
-[ext_resource type="Script" path="res://_Lib/StateChartLib/Tools/StateDebugger/settings.gd" id="3_fkwex"]
-[ext_resource type="Script" path="res://_Lib/StateChartLib/Tools/StateDebugger/entire_tree.gd" id="3_lfg3o"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/Tools/StateDebugger/state_chart_debugger.gd" id="1_7i0xt"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/Tools/StateDebugger/dynamic_tree.gd" id="2_uggtb"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/Tools/StateDebugger/settings.gd" id="3_fkwex"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/Tools/StateDebugger/entire_tree.gd" id="3_lfg3o"]
 [ext_resource type="FontFile" uid="uid://bb8skx6vfxbvg" path="res://addons/SimonsStateChart/Tools/Fonts/NotoColorEmoji-Regular.ttf" id="4_j6rum"]
 
 [sub_resource type="FontVariation" id="FontVariation_plmjy"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cethgc0r7hbd8"]
+[gd_scene load_steps=8 format=3 uid="uid://cethgc0r7hbd8"]
 
 [ext_resource type="Script" path="res://addons/SimonsStateChart/state_chart.gd" id="1_bjq4o"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/parallel_state.gd" id="2_3dvw8"]
@@ -6,33 +6,58 @@
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/compound_state.gd" id="3_lqogw"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/state_transition.gd" id="5_u100q"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/cooldown_guard.gd" id="6_704rj"]
+[ext_resource type="PackedScene" uid="uid://c7ecds4ls4bhc" path="res://addons/SimonsStateChart/Tools/StateDebugger/state_chart_debugger.tscn" id="7_jbyva"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("1_bjq4o")
 
-[node name="ParallelState" type="Node" parent="StateChart"]
+[node name="Root" type="Node" parent="StateChart"]
 script = ExtResource("2_3dvw8")
 
-[node name="CompoundState" type="Node" parent="StateChart/ParallelState" node_paths=PackedStringArray("default_substate")]
+[node name="CompoundState" type="Node" parent="StateChart/Root" node_paths=PackedStringArray("default_substate")]
 script = ExtResource("3_lqogw")
-default_substate = NodePath("AtomicState")
+default_substate = NodePath("Initial")
 
-[node name="AtomicState" type="Node" parent="StateChart/ParallelState/CompoundState"]
+[node name="AtomicState" type="Node" parent="StateChart/Root/CompoundState"]
 script = ExtResource("3_0cuih")
 
-[node name="ToAtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
+[node name="ToAtomicState2" type="Node" parent="StateChart/Root/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
-to = NodePath("../../AtomicState2")
+to = NodePath("../../ProblematicState")
 
-[node name="CooldownGuard" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState/ToAtomicState2"]
+[node name="CooldownGuard" type="Node" parent="StateChart/Root/CompoundState/AtomicState/ToAtomicState2"]
 script = ExtResource("6_704rj")
-cooldown_seconds = 2.0
+cooldown_seconds = 5.0
 
-[node name="AtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState"]
+[node name="ProblematicState" type="Node" parent="StateChart/Root/CompoundState"]
 script = ExtResource("3_0cuih")
 
-[node name="ToAtomicState" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState2" node_paths=PackedStringArray("to")]
+[node name="ToAtomicState" type="Node" parent="StateChart/Root/CompoundState/ProblematicState" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
 to = NodePath("../../AtomicState")
+delay_seconds = 0.5
+
+[node name="Initial" type="Node" parent="StateChart/Root/CompoundState"]
+script = ExtResource("3_0cuih")
+
+[node name="ToAtomicState" type="Node" parent="StateChart/Root/CompoundState/Initial" node_paths=PackedStringArray("to")]
+script = ExtResource("5_u100q")
+to = NodePath("../../AtomicState")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="StateChartDebugger" parent="CanvasLayer" node_paths=PackedStringArray("state_to_watch") instance=ExtResource("7_jbyva")]
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = 0.122
+anchor_right = 0.674
+anchor_bottom = 0.856
+offset_left = 0.0159912
+offset_top = -0.0560074
+offset_right = -0.447998
+offset_bottom = 0.311951
+size_flags_horizontal = 3
+size_flags_vertical = 3
+state_to_watch = NodePath("../../StateChart/Root")
