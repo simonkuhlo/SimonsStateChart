@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cethgc0r7hbd8"]
+
+[ext_resource type="Script" path="res://state_chart.gd" id="1_bjq4o"]
+[ext_resource type="Script" path="res://StateChartState/parallel_state.gd" id="2_3dvw8"]
+[ext_resource type="Script" path="res://StateChartState/atomic_state.gd" id="3_0cuih"]
+[ext_resource type="Script" path="res://StateChartState/compound_state.gd" id="3_lqogw"]
+[ext_resource type="Script" path="res://StateTransition/state_transition.gd" id="5_u100q"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StateChart" type="Node" parent="."]
+script = ExtResource("1_bjq4o")
+
+[node name="ParallelState" type="Node" parent="StateChart"]
+script = ExtResource("2_3dvw8")
+
+[node name="CompoundState" type="Node" parent="StateChart/ParallelState" node_paths=PackedStringArray("default_substate")]
+script = ExtResource("3_lqogw")
+default_substate = NodePath("AtomicState")
+
+[node name="AtomicState" type="Node" parent="StateChart/ParallelState/CompoundState"]
+script = ExtResource("3_0cuih")
+
+[node name="ToAtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
+script = ExtResource("5_u100q")
+to = NodePath("../../AtomicState2")
+
+[node name="AtomicState2" type="Node" parent="StateChart/ParallelState/CompoundState"]
+script = ExtResource("3_0cuih")
+
+[node name="ToAtomicState" type="Node" parent="StateChart/ParallelState/CompoundState/AtomicState2" node_paths=PackedStringArray("to")]
+script = ExtResource("5_u100q")
+to = NodePath("../../AtomicState")
