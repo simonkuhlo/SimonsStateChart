@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cethgc0r7hbd8"]
+[gd_scene load_steps=12 format=3 uid="uid://cethgc0r7hbd8"]
 
 [ext_resource type="Texture2D" uid="uid://bg5tk8p6abwr0" path="res://icon.svg" id="1_180l7"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/state_chart.gd" id="1_bjq4o"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/cooldown_guard.gd" id="6_704rj"]
 [ext_resource type="PackedScene" uid="uid://c7ecds4ls4bhc" path="res://addons/SimonsStateChart/Tools/StateDebugger/state_chart_debugger.tscn" id="7_jbyva"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/delay_guard.gd" id="9_bhjlc"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/input_guard.gd" id="10_acy3m"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -59,6 +60,11 @@ script = ExtResource("3_0cuih")
 [node name="ToAtomicState" type="Node" parent="StateChart/Root/CompoundState/Initial" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
 to = NodePath("../../AtomicState")
+
+[node name="InputGuard" type="Node" parent="StateChart/Root/CompoundState/Initial/ToAtomicState"]
+script = ExtResource("10_acy3m")
+input_name = &"ui_accept"
+check_during = 0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
