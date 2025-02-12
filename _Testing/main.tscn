@@ -1,14 +1,23 @@
-[gd_scene load_steps=8 format=3 uid="uid://cethgc0r7hbd8"]
+[gd_scene load_steps=11 format=3 uid="uid://cethgc0r7hbd8"]
 
+[ext_resource type="Texture2D" uid="uid://bg5tk8p6abwr0" path="res://icon.svg" id="1_180l7"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/state_chart.gd" id="1_bjq4o"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/parallel_state.gd" id="2_3dvw8"]
+[ext_resource type="Script" path="res://_Testing/sprite_2d.gd" id="2_gcitf"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/atomic_state.gd" id="3_0cuih"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateChartState/compound_state.gd" id="3_lqogw"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/state_transition.gd" id="5_u100q"]
 [ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/cooldown_guard.gd" id="6_704rj"]
 [ext_resource type="PackedScene" uid="uid://c7ecds4ls4bhc" path="res://addons/SimonsStateChart/Tools/StateDebugger/state_chart_debugger.tscn" id="7_jbyva"]
+[ext_resource type="Script" path="res://addons/SimonsStateChart/StateTransition/Guards/delay_guard.gd" id="9_bhjlc"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="." node_paths=PackedStringArray("state_chart")]
+position = Vector2(204, 271)
+texture = ExtResource("1_180l7")
+script = ExtResource("2_gcitf")
+state_chart = NodePath("../StateChart")
 
 [node name="StateChart" type="Node" parent="."]
 script = ExtResource("1_bjq4o")
@@ -18,26 +27,31 @@ script = ExtResource("2_3dvw8")
 
 [node name="CompoundState" type="Node" parent="StateChart/Root" node_paths=PackedStringArray("default_substate")]
 script = ExtResource("3_lqogw")
-default_substate = NodePath("Initial")
+default_substate = NodePath("AtomicState")
 
 [node name="AtomicState" type="Node" parent="StateChart/Root/CompoundState"]
 script = ExtResource("3_0cuih")
 
-[node name="ToAtomicState2" type="Node" parent="StateChart/Root/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
+[node name="ToProblematicState" type="Node" parent="StateChart/Root/CompoundState/AtomicState" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
 to = NodePath("../../ProblematicState")
+trigger = &"test"
 
-[node name="CooldownGuard" type="Node" parent="StateChart/Root/CompoundState/AtomicState/ToAtomicState2"]
+[node name="CooldownGuard" type="Node" parent="StateChart/Root/CompoundState/AtomicState/ToProblematicState"]
 script = ExtResource("6_704rj")
 cooldown_seconds = 5.0
 
 [node name="ProblematicState" type="Node" parent="StateChart/Root/CompoundState"]
 script = ExtResource("3_0cuih")
 
-[node name="ToAtomicState" type="Node" parent="StateChart/Root/CompoundState/ProblematicState" node_paths=PackedStringArray("to")]
+[node name="ToInitial" type="Node" parent="StateChart/Root/CompoundState/ProblematicState" node_paths=PackedStringArray("to")]
 script = ExtResource("5_u100q")
-to = NodePath("../../AtomicState")
-delay_seconds = 0.5
+to = NodePath("../../Initial")
+
+[node name="DelayGuard" type="Node" parent="StateChart/Root/CompoundState/ProblematicState/ToInitial" node_paths=PackedStringArray("state_to_watch")]
+script = ExtResource("9_bhjlc")
+state_to_watch = NodePath("../..")
+delay_seconds = 3.0
 
 [node name="Initial" type="Node" parent="StateChart/Root/CompoundState"]
 script = ExtResource("3_0cuih")
@@ -61,3 +75,6 @@ offset_bottom = 0.311951
 size_flags_horizontal = 3
 size_flags_vertical = 3
 state_to_watch = NodePath("../../StateChart/Root")
+
+[connection signal="activated" from="StateChart/Root/CompoundState/ProblematicState" to="Sprite2D" method="_on_problematic_state_activated"]
+[connection signal="physics_processing" from="StateChart/Root/CompoundState/ProblematicState" to="Sprite2D" method="_on_problematic_state_physics_processing"]
