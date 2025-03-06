@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgtfxc0ap60xs"
-path="res://.godot/imported/ActiveStateGuard.svg-947ae80486728ab8d71d88a7d24a53e1.ctex"
+path="res://.godot/imported/ActiveStateGuard.svg-11001145e7613847a1a7e2d14479756d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/ActiveStateGuard.svg"
-dest_files=["res://.godot/imported/ActiveStateGuard.svg-947ae80486728ab8d71d88a7d24a53e1.ctex"]
+source_file="res://addons/simonsstatechart/Icons/ActiveStateGuard.svg"
+dest_files=["res://.godot/imported/ActiveStateGuard.svg-11001145e7613847a1a7e2d14479756d.ctex"]
 
 [params]
 

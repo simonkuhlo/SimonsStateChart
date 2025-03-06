@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgykounv550kx"]
 
-[ext_resource type="Script" path="res://addons/SimonsStateChart/Tools/ExpressionManager/em_debugger.gd" id="1_kldm5"]
+[ext_resource type="Script" uid="uid://bjnygh72buamk" path="res://addons/simonsstatechart/Tools/ExpressionManager/em_debugger.gd" id="1_kldm5"]
 
 [node name="EmDebugger" type="VBoxContainer"]
 anchors_preset = 15

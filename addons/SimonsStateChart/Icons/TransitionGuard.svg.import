@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://50qrmrrelt1o"
-path="res://.godot/imported/TransitionGuard.svg-03a64b3a1f5841f0f7caf515a30959d9.ctex"
+path="res://.godot/imported/TransitionGuard.svg-4e56b0dbe04b8f36a851750a8c17ec0e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/TransitionGuard.svg"
-dest_files=["res://.godot/imported/TransitionGuard.svg-03a64b3a1f5841f0f7caf515a30959d9.ctex"]
+source_file="res://addons/simonsstatechart/Icons/TransitionGuard.svg"
+dest_files=["res://.godot/imported/TransitionGuard.svg-4e56b0dbe04b8f36a851750a8c17ec0e.ctex"]
 
 [params]
 

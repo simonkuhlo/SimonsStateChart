@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://by3m824efmr15"
-path="res://.godot/imported/NotoSans-VariableFont_wdth,wght.ttf-4746f8e1ee7c4b03d3290d8766da0983.fontdata"
+path="res://.godot/imported/NotoSans-VariableFont_wdth,wght.ttf-5ed253c802d9981fc21b1da092e07d26.fontdata"
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Tools/Fonts/NotoSans-VariableFont_wdth,wght.ttf"
-dest_files=["res://.godot/imported/NotoSans-VariableFont_wdth,wght.ttf-4746f8e1ee7c4b03d3290d8766da0983.fontdata"]
+source_file="res://addons/simonsstatechart/Tools/Fonts/NotoSans-VariableFont_wdth,wght.ttf"
+dest_files=["res://.godot/imported/NotoSans-VariableFont_wdth,wght.ttf-5ed253c802d9981fc21b1da092e07d26.fontdata"]
 
 [params]
 
@@ -23,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

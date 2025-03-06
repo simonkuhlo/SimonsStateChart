@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://djpucfn3ekrsb"
-path="res://.godot/imported/ExpressionManager.svg-c2e56dc55c717add9acac0ca3888eb56.ctex"
+path="res://.godot/imported/ExpressionManager.svg-f319236b90ac1a11d163e40a4af914e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/ExpressionManager.svg"
-dest_files=["res://.godot/imported/ExpressionManager.svg-c2e56dc55c717add9acac0ca3888eb56.ctex"]
+source_file="res://addons/simonsstatechart/Icons/ExpressionManager.svg"
+dest_files=["res://.godot/imported/ExpressionManager.svg-f319236b90ac1a11d163e40a4af914e1.ctex"]
 
 [params]
 

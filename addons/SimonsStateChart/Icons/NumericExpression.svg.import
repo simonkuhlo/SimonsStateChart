@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://on4fu8k8bq8"
-path="res://.godot/imported/NumericExpression.svg-274c5072b7d3b0e2d1a473fce93b9851.ctex"
+path="res://.godot/imported/NumericExpression.svg-137a508755504883a89e4574bb30fe9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/NumericExpression.svg"
-dest_files=["res://.godot/imported/NumericExpression.svg-274c5072b7d3b0e2d1a473fce93b9851.ctex"]
+source_file="res://addons/simonsstatechart/Icons/NumericExpression.svg"
+dest_files=["res://.godot/imported/NumericExpression.svg-137a508755504883a89e4574bb30fe9e.ctex"]
 
 [params]
 

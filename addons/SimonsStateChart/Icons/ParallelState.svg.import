@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bw10woqrq6mkb"
-path="res://.godot/imported/ParallelState.svg-1d77d1039337dff6fcef2e2e32bb293a.ctex"
+path="res://.godot/imported/ParallelState.svg-be801791401c299e5c505777378ff6a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/ParallelState.svg"
-dest_files=["res://.godot/imported/ParallelState.svg-1d77d1039337dff6fcef2e2e32bb293a.ctex"]
+source_file="res://addons/simonsstatechart/Icons/ParallelState.svg"
+dest_files=["res://.godot/imported/ParallelState.svg-be801791401c299e5c505777378ff6a4.ctex"]
 
 [params]
 

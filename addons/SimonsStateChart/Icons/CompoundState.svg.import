@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfiaaauf0ywt7"
-path="res://.godot/imported/CompoundState.svg-bb6888ab3e72014481f31e76b912e489.ctex"
+path="res://.godot/imported/CompoundState.svg-b7d3ec6228434c912392d001bddce65c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/CompoundState.svg"
-dest_files=["res://.godot/imported/CompoundState.svg-bb6888ab3e72014481f31e76b912e489.ctex"]
+source_file="res://addons/simonsstatechart/Icons/CompoundState.svg"
+dest_files=["res://.godot/imported/CompoundState.svg-b7d3ec6228434c912392d001bddce65c.ctex"]
 
 [params]
 

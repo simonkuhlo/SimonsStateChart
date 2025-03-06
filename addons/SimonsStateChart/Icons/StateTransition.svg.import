@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfdipm6bc4ae5"
-path="res://.godot/imported/StateTransition.svg-33900acd8fb7be6848bc5c9d3a39e129.ctex"
+path="res://.godot/imported/StateTransition.svg-267a22a821a2c2c1a513824700aa3ed1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Icons/StateTransition.svg"
-dest_files=["res://.godot/imported/StateTransition.svg-33900acd8fb7be6848bc5c9d3a39e129.ctex"]
+source_file="res://addons/simonsstatechart/Icons/StateTransition.svg"
+dest_files=["res://.godot/imported/StateTransition.svg-267a22a821a2c2c1a513824700aa3ed1.ctex"]
 
 [params]
 

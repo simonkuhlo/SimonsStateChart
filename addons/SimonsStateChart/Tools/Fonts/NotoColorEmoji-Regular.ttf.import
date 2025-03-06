@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bb8skx6vfxbvg"
-path="res://.godot/imported/NotoColorEmoji-Regular.ttf-69c4f7cd27837d9ba888568a97219632.fontdata"
+path="res://.godot/imported/NotoColorEmoji-Regular.ttf-9e6fd9334713f4f49acc707e1592eb10.fontdata"
 
 [deps]
 
-source_file="res://addons/SimonsStateChart/Tools/Fonts/NotoColorEmoji-Regular.ttf"
-dest_files=["res://.godot/imported/NotoColorEmoji-Regular.ttf-69c4f7cd27837d9ba888568a97219632.fontdata"]
+source_file="res://addons/simonsstatechart/Tools/Fonts/NotoColorEmoji-Regular.ttf"
+dest_files=["res://.godot/imported/NotoColorEmoji-Regular.ttf-9e6fd9334713f4f49acc707e1592eb10.fontdata"]
 
 [params]
 
@@ -23,6 +23,7 @@ allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1
+keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]
